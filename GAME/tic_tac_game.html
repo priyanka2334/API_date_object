@@ -1,0 +1,168 @@
+<!-- 
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            height: 50vh;
+           border: 2px solid palevioletred;
+           justify-content: center;
+           align-items: center;
+        }
+        .box {
+            height: 8vh;
+            width: 8vh;
+            border-radius: 10px;
+            box-shadow: 0 0 16px rgb(155, 144, 144);
+            font-size: 4vh; /* Change font size of the boxes */
+            color: rgb(0, 0, 0); /* Change font color of the boxes */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        .game {
+            height: 15%;
+            width: 15%;
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            color: rgb(171, 29, 18);
+        }
+        #reset-btn {
+            padding: 1rem;
+            font-size: 1.25rem;
+            background-color: black;
+            color: white;
+            border-radius: 1rem;
+            border: none;
+        }
+        #msg {
+            color: rgb(185, 17, 17); /* Change font color of the winner message */
+            font-size: 8vmin; /* Change font size of the winner message */
+        }
+        #new-btn {
+            padding: 1rem;
+            font-size: 1.25rem;
+            background-color: black;
+            color: rgb(220, 13, 13);
+            border-radius: 1rem;
+            border: none;
+        }
+        .msg-container {
+            height: 30vmin;
+            
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="msg-container hide">
+        <p id="msg">Winner</p>
+    </div>
+    <button id="new-btn">New Game</button>
+    <h1>Tic Tac Toe</h1>
+    <div class="container">
+        <div class="game">
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+        </div>
+    </div>
+    <button id="reset-btn">Reset Game</button>
+
+    <script>
+        let boxs = document.querySelectorAll('.box');
+        let resetBtn = document.querySelector("#reset-btn");
+        let newGameBtn = document.querySelector('#new-btn');
+        let msgContainer = document.querySelector(".msg-container");
+        let msg = document.querySelector('#msg');
+
+        let turnO = true;
+        let arr = [[0, 1, 2], [0, 3, 6], [0, 4, 8], [1, 4, 7], [2, 5, 8], [2, 4, 6], [3, 4, 5], [6, 7, 8]];
+
+        const resetGame = () => {
+            turnO = true;
+            enableBoxes();
+            msgContainer.classList.add("hide");
+        };
+
+        boxs.forEach((box) => {
+            box.addEventListener('click', () => {
+                if (box.innerText === "") { // Prevent overwriting a box
+                    if (turnO) {
+                        box.innerText = "O";
+                        turnO = false;
+                    } else {
+                        box.innerText = "X";
+                        turnO = true;
+                    }
+                    box.disabled = true;
+
+                    checkWinner();
+                }
+            });
+        });
+
+        const disableBoxes = () => {
+            boxs.forEach((box) => {
+                box.disabled = true;
+            });
+        };
+
+        const enableBoxes = () => {
+            boxs.forEach((box) => {
+                box.disabled = false;
+                box.innerText = "";
+            });
+        };
+
+        const showWinner = (winner) => {
+            msg.innerText = `Congratulations, the winner is ${winner}`;
+            msgContainer.classList.remove("hide");
+            disableBoxes();
+        };
+
+        const checkWinner = () => {
+            for (let pattern of arr) {
+                let pos1Val = boxs[pattern[0]].innerText;
+                let pos2Val = boxs[pattern[1]].innerText;
+                let pos3Val = boxs[pattern[2]].innerText;
+
+                if (pos1Val !== "" && pos2Val !== "" && pos3Val !== "") {
+                    if (pos1Val === pos2Val && pos2Val === pos3Val) {
+                        console.log("winner", pos1Val);
+                        showWinner(pos1Val);
+                        return;
+                    }
+                }
+            }
+        };
+
+        newGameBtn.addEventListener("click", resetGame);
+        resetBtn.addEventListener("click", resetGame);
+
+    </script>
+</body>
+</html>
+ -->
+
+ 

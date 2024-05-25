@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button{
+            height: 250px;
+            width: 250px;
+            margin: 5px;
+            border: 2px solid black;
+            display: inline-block;
+        }
+        #grey{
+            background: #000;
+        }
+        #yellow{
+            background-color: yellow;
+        }
+        #green{
+            background-color: green;
+        }
+        #red{
+            background-color: red;
+        }
+        #pink{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="button" id="grey"></div>
+    <div class="button" id="yellow"></div>
+    <div class="button" id="green"></div>
+    <div class="button" id="red"></div>
+    <div class="button" id="pink"></div>
+    <script>
+       let buttons= document.querySelectorAll(".button");
+       let body = document.querySelector("body");
+
+        buttons.forEach(function(button){
+            console.log(button);
+            button.addEventListener('click',function(e){
+                console.log(e);
+                console.log(e.target);
+                if(e.target.id === "grey"){
+                body.style.backgroundColor = "grey";
+                }
+                if(e.target.id === "yellow"){
+                body.style.backgroundColor = "yellow";
+                }
+                if(e.target.id === "green"){
+                body.style.backgroundColor = "green";
+                }
+                if(e.target.id === "red"){
+                body.style.backgroundColor = "red";
+                }
+                if(e.target.id === "pink"){
+                body.style.backgroundColor = "pink";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button {
+            height: 30px;
+            width: 30px;
+            margin: 5px;
+            border: 2px solid black;
+            display: inline-block;
+        }
+        #grey{
+            background-color: gray;
+        }
+        #yellow{
+            background-color: yellow;
+        }
+        #green{
+            background-color: green;
+        }
+        #red{
+            background-color: red;
+        }
+        #pink{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="button" id="grey"></div>
+    <div class="button" id="yellow"></div>
+    <div class="button" id="green"></div>
+    <div class="button" id="red"></div>
+    <div class="button" id="pink"></div>
+    <script>
+        let buttons = document.querySelectorAll(".button");
+        let body = document.querySelector("body");
+
+        buttons.forEach(function(button) {
+            console.log(button);
+            button.addEventListener('click', function(e) {
+                console.log(e);
+                console.log(e.target);
+                if (e.target.id === "grey") {
+                    body.style.backgroundColor = "grey";
+                }
+                if (e.target.id === "yellow") {
+                    body.style.backgroundColor = "yellow";
+                }
+                if (e.target.id === "green") {
+                    body.style.backgroundColor = "green";
+                }
+                if (e.target.id === "red") {
+                    body.style.backgroundColor = "red";
+                }
+                if (e.target.id === "pink") {
+                    body.style.backgroundColor = "pink";
+                }
+            });
+        });
+    </script>
+</body>
+</html> -->
+
+

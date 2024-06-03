@@ -11,6 +11,9 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
+    /* background-image: url("image/weather1.jpeg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .card {
     height: 650px;

@@ -22,3 +22,15 @@ async function fetchSeasons() {
         document.getElementById('result').textContent = 'Error fetching data';
     }
 }
+
+
+// let x = new Date("october 13, 2027 11:12:13");
+// let y = new Date(" ");
+
+//  if(x<y){
+//     console.log("x is past date");
+// }else if(x>y){
+//     console.log("y is future date");
+// }else{
+//     console.log("x is same date");
+// }

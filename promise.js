@@ -95,76 +95,94 @@
 
 //////////////////////////////////////////////////////////////callback hell
 
-function ATM(enter){
-    console.log("visit Atm");
-    enter();
-}
+// function ATM(enter){
+//     console.log("visit Atm");
+//     enter();
+// }
 
-function Enteratm(insert){
-    console.log("enter atm");
-    insert();
-}
+// function Enteratm(insert){
+//     console.log("enter atm");
+//     insert();
+// }
 
-function Insertcart(processing){
-    console.log("insert the card");
-    processing();
-}
+// function Insertcart(processing){
+//     console.log("insert the card");
+//     processing();
+// }
 
-function Processing(pin){
-    setTimeout(()=>{
-        console.log("processing for withdraw");
-        pin();
-    },5000)
-}
-
-
-function Enterpin(withdraw){
-    setTimeout(()=>{
-        console.log("Please enter the pin");
-        withdraw();
-    },2000)
-}
+// function Processing(pin){
+//     setTimeout(()=>{
+//         console.log("processing for withdraw");
+//         pin();
+//     },5000)
+// }
 
 
-function Withdrawmoney(cash){
-    setTimeout(()=>{
-        console.log("With draw the money");
-        cash();
-    },5000)
-}
+// function Enterpin(withdraw){
+//     setTimeout(()=>{
+//         console.log("Please enter the pin");
+//         withdraw();
+//     },2000)
+// }
 
 
-function CollectCash(Leave){
-    setTimeout(()=>{
-        console.log("Collect the cash");
-        Leave();
-    },1000);
-} 
+// function Withdrawmoney(cash){
+//     setTimeout(()=>{
+//         console.log("With draw the money");
+//         cash();
+//     },5000)
+// }
 
 
-function LeaveATM(leavATM){
-    setTimeout(()=>{
-        console.log("Leave the Atm");
-        leavATM()
+// function CollectCash(Leave){
+//     setTimeout(()=>{
+//         console.log("Collect the cash");
+//         Leave();
+//     },1000);
+// } 
+
+
+// function LeaveATM(leavATM){
+//     setTimeout(()=>{
+//         console.log("Leave the Atm");
+//         leavATM()
         
 
-    },2000)
-}
+//     },2000)
+// }
 
 
-ATM(()=>{
-    Enteratm(()=>{
-        Insertcart(()=>{
-            Processing(()=>{
-                Enterpin(()=>{
-                    Withdrawmoney(()=>{
-                        CollectCash(()=>{
-                            LeaveATM(()=>{
-                            })
-                        })
-                    })
-                })
-            })
-        })
-    })
-});
+// ATM(()=>{
+//     Enteratm(()=>{
+//         Insertcart(()=>{
+//             Processing(()=>{
+//                 Enterpin(()=>{
+//                     Withdrawmoney(()=>{
+//                         CollectCash(()=>{
+//                             LeaveATM(()=>{
+//                             })
+//                         })
+//                     })
+//                 })
+//             })
+//         })
+//     })
+// });
+
+
+const myVehicle = {
+    brand: 'Ford',
+    model: 'Mustang',
+    color: 'red'
+  }
+  
+  const updateMyVehicle = {
+    type: 'car',
+    year: 2021, 
+    color: 'yellow'
+  }
+  
+  const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
+  
+  //Check the result object in the console:
+  console.log(myUpdatedVehicle);
